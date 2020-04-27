@@ -12,8 +12,24 @@
 
 <p>
   <strong>Location:</strong>
-  <%= @farmer.location %>
+  <%= @zip %>
 </p>
 
-<%= link_to 'Edit', edit_farmer_path(@farmer) %> |
-<%= link_to 'Back', farmers_path %>
+<br><br>
+  <div>
+    <h4>OPEN BATCHES</h4>
+    <%@batches.each do |batch| %>
+    <ul>
+      <li>Name:<%=batch.name%></li>
+      <li>Description:<%=batch.desc%></li>
+      <li>Amount:<%=batch.amount%> kilos</li>
+      <li>Price per kilo:$<%=batch.price%></li>
+    </ul>
+    <%= link_to "Buy #{batch.name}", new_order_url(:batch => batch.id, :customer => @customer.id)%><h4>
+    <br>
+
+    <%end%>
+  </div>
+
+  <div>
+  </div>

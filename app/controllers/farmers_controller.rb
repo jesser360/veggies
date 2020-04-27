@@ -10,6 +10,10 @@ class FarmersController < ApplicationController
   # GET /farmers/1
   # GET /farmers/1.json
   def show
+    @farmer = Farmer.find_by_id(params[:id])
+    @zip = ZipCodes.identify(@farmer.location.to_s)
+    @batches = @farmer.batches
+    @customer = Customer.first
   end
 
   # GET /farmers/new

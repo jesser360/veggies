@@ -1,16 +1,29 @@
 <div >
-  Welcome to veggies
+  <div class="row" style = "text-align:center">
+  <h2>Welcome to veggies</h2>
+</div>
 <br><br>
-  All open Batches
-  <% @batches.each do |batch| %>
-  <ul>
-  <li>Name:<%=batch.name%></li>
-  <li>Description:<%=batch.desc%></li>
-  <li>Amount:<%=batch.amount%> kilos</li>
-  <li>Price per kilo:$<%=batch.price%></li>
-  <li>Farmer: <%=batch.farmer.name%> - Go to Farmer's Page</li>
-</ul>
-  <% end %>
+  <div class = "row" style ="padding:5vw">
+    <div class = "col-md-8">
+      <h4>All open Batches</h4>
+      <% @batches.each do |batch| %>
+      <ul>
+        <li>Name:<%=batch.name%></li>
+        <li>Description:<%=batch.desc%></li>
+        <li>Amount:<%=batch.amount%> kilos</li>
+        <li>Price per kilo:$<%=batch.price%></li>
+        <li>Farmer: <%= link_to "#{batch.farmer.name}", farmer_url(batch.farmer)%></li>
+      </ul>
+      <br>
+      <% end %>
+    </div>
+    <div class ="col-md-4">
+      <span>My orders</span>
+      <%@orders.each do |order|%>
+      <li>: <%= link_to "#{order.quantity} - #{order.batch.name} . $#{order.total_price}", order_url(order)%></li>
+      <%end%>
+    </div>
+  </div>
 </div>
 
 <!-- Java script in script tag -->

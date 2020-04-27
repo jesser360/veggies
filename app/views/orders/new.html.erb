@@ -1,5 +1,46 @@
-<h1>New Order</h1>
+<div style="margin:5vw">
 
-<%= render 'form', order: @order %>
+<h1>New order</h1><br>
+<%= form_with(model: @order, local: true) do |form| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-<%= link_to 'Back', orders_path %>
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <h4><%=@batch.name %><h4>
+    <h5><%=@batch.desc %><h5>
+    <h5>$<%=@batch.price %> per kilo<h5>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div class=" hidden field">
+    <%= hidden_field_tag 'customer_id',@customer.id %>
+
+  </div>
+
+  <div class=" hidden field">
+    <%= hidden_field_tag 'batch_id',@batch.id %>
+
+  </div>
+
+  <div class=" hidden field">
+    <%= hidden_field_tag 'price',@batch.price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

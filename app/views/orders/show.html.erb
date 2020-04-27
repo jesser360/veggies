@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @order.batch.name %>
+</p>
+<p>
   <strong>Quantity:</strong>
   <%= @order.quantity %>
 </p>
@@ -11,14 +15,8 @@
 </p>
 
 <p>
-  <strong>Customer:</strong>
-  <%= @order.customer %>
+  <strong>Farmer:</strong>
+  <%= @order.batch.farmer.name %>
 </p>
 
-<p>
-  <strong>Batch:</strong>
-  <%= @order.batch %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Back Home', '/' %> 

@@ -15,6 +15,9 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    # @customer = Customer.find_by_id(params[:customer])
+    @customer = Customer.first
+    @batch = Batch.find_by_id(params[:batch])
   end
 
   # GET /orders/1/edit
@@ -25,7 +28,9 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-
+    @order.total_price = order_params[:quantity].to_i * params[:price].to_i
+    @order.batch_id = params[:batch_id]
+    @order.customer_id = params[:customer_id]
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
