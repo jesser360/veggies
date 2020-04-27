@@ -1,0 +1,22 @@
+<div >
+  Welcome to veggies
+<br><br>
+  All open Batches
+  <% @batches.each do |batch| %>
+  <ul>
+  <li>Name:<%=batch.name%></li>
+  <li>Description:<%=batch.desc%></li>
+  <li>Amount:<%=batch.amount%> kilos</li>
+  <li>Price per kilo:$<%=batch.price%></li>
+  <li>Farmer: <%=batch.farmer.name%> - Go to Farmer's Page</li>
+</ul>
+  <% end %>
+</div>
+
+<!-- Java script in script tag -->
+  <script>
+  </script>
+
+<!-- CSS in style tag -->
+  <style>
+  </style>
