@@ -16,6 +16,8 @@ f2 = Farmer.create({name:'Farmer John',email:'John@yahoo.com',location:70001})
 
 b1 = Batch.create({name:'Zuchinni',desc:'yummy in the tummy zuchini',amount:20,price:3, farmer:f1})
 b2 = Batch.create({name:'Carrots',desc:'crunchy and fresh yumz',amount:10,price:2, farmer:f2})
+b2 = Batch.create({name:'Cabbage',desc:'that good green stuff',amount:50,price:1, farmer:f2})
+b2 = Batch.create({name:'Brussel Sprouts',desc:'yucky but healthy',amount:15,price:8, farmer:f2})
 
 c1 = Customer.create({name:'Sally Sue',email:'sally@yahoo.com',location:94618})
 c2 = Customer.create({name:'Timmy boy',email:'timmy@yahoo.com',location:70003})

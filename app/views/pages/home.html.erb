@@ -12,7 +12,8 @@
         <li>Description:<%=batch.desc%></li>
         <li>Amount:<%=batch.amount%> kilos</li>
         <li>Price per kilo:$<%=batch.price%></li>
-        <li>Farmer: <%= link_to "#{batch.farmer.name}", farmer_url(batch.farmer)%></li>
+        <span>Farmer: <%= link_to "#{batch.farmer.name}", farmer_url(batch.farmer)%></span><br>
+        <%= link_to "Buy #{batch.name}", new_order_url(:batch => batch.id, :customer => @customer.id)%><h4>
       </ul>
       <br>
       <% end %>
