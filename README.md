@@ -1,24 +1,23 @@
 # README
+veggies app for farmers to sell their ripe produce before it goes bad. Help the farmers!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*App rundown* 
 
-Things you may want to cover:
+Farmers - basic info
+<br>
+Customers - basic info 
+<br>
+Batches - Farmer creates batch of all the produce they need to sell (ex 50 heads of lettuce)
+<br>
+Orders - Customer places an order from the farmers batch (ex: 8 heads of lettuce)
+<br>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-- Main pages to build -- <br>
+<ul>
+  <li> Customer can browse all of the nearby farmer's open batches </li>
+<li> Customer can view all batches for a specifc farmer </li>
+<li> Customer can create an order.</li>
+<li> Customer can view their current and past orders</li>
+<li> Farmer can view their current and past orders</li>
+<li> Farmer can create and see their current batches</li>
+</ul>
