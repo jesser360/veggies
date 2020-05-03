@@ -6,6 +6,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'zip-codes'
 gem 'bootstrap-sass', '~> 3.3.7'
+gem 'webpacker'
+gem 'foreman'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
