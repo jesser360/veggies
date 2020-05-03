@@ -5,7 +5,7 @@ ruby '2.5.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'zip-codes'
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'webpacker'
 gem 'foreman'
 
